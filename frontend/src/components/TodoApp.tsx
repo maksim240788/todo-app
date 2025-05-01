@@ -16,19 +16,19 @@ function App() {
 
       {/* Input + Button - Full Width */}
       <div className="flex flex-col sm:flex-row gap-2 mb-6 mx-[30%]">
-        <input
+        <Input
           type="text"
           className="flex-1 px-4 py-3 bg-gray-900 border border-gray-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Add a new task"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <button
+        <Button
           onClick={() => { addTodo(newTodo); setNewTodo(''); }}
           className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded border border-blue-400 text-black"
         >
           Add
-        </button>
+        </Button>
       </div>
 
       {/* Full-Width TODO List */}
@@ -44,12 +44,12 @@ function App() {
             >
               {todo.title}
             </span>
-            <button
+            <Button
               onClick={() => deleteTodo(todo.id)}
               className="text-red-500 hover:text-red-700"
             >
               ✕
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
